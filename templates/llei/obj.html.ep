@@ -1,0 +1,54 @@
+% layout 'default';
+% title 'Objectius de la llei';
+
+%# Variables {{{
+% my $objectius_rs	= $self->m_llei->objectius;
+% my $objectius_n1	= $self->m_llei->nivell_obj('1');
+%# }}}
+
+%# Capçalera {{{
+<h1><%= link_to "Objectius de la Llei 11/2014"  => "/obj/1/0" %></h1>
+<hr>
+Objectiu:
+% while (my $set = $objectius_n1->next) {
+	% my $num_obj = $set->num;
+	% my $num			= $num_obj - 100;
+	% my $puntuacio = $self->m_llei->punts($num_obj);
+	% my $color = print_color($puntuacio);
+	<b>[<span style="color:<%= $color %>">◼
+	%= link_to "$num" =>  "/obj/2/$num_obj";
+	</span>]</b>
+% }
+<hr><br>
+%# }}}
+
+% while (my $set = $objectius_rs->next) {
+	% my $num_obj = $set->num;
+	% my $num_itm = print_num($num_obj);
+	% my @num			= split('\.',$num_obj);
+	% my $num_1		= shift @num;
+	% my $nivell	= $set->nivell;
+	% next if $nivell gt 1 and $subn eq 0;
+	% next if $subn ne 0 and ($num_1 > $subn or $num_1 < $subn);
+	%# posem $set->codi->codi ja que codi està relacionat en les BDD
+	% my $codi = $set->codi->codi;
+	% my $puntuacio = $self->m_llei->punts($num_obj);
+	%#= sprintf("%.2f",$puntuacio);
+	% my $color = print_color($puntuacio);
+	<small>
+	%= link_to "$codi" => "/llei/$codi";
+	</small>
+	<b><span style="color:<%= $color %>">◼</span>
+	%= "Objectiu $num_itm";
+	</span></b>
+	% my $objectiu  = $set->objectiu;
+	% my @lines		= split(/\n/, $objectiu);
+	% foreach my $line (@lines) {
+		<%= $line %><br>
+	% }
+	<br>
+
+% }
+<hr>
+
+%# vim: tabstop=2 

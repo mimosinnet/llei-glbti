@@ -1,0 +1,44 @@
+% layout 'default';
+% title 'Operacionalització de la llei';
+
+%# Variables {{{
+% my @codis   = $self->m_llei->codis;
+% my $text_rs = $self->m_llei->text($article);
+% my $text 		= $text_rs->text;
+% my @lines		= split(/\n/, $text);
+% my $obj_rs	= $self->m_llei->objectius_llei($article);
+%# }}}
+
+<h1>Operacionalitació de la llei</h1>
+
+<hr>
+Articles de la llei: 
+% foreach my $codi (@codis) {
+	<%= link_to $codi => "/llei/$codi" %>
+% }
+<hr>
+<h2>El text legal:</h2>
+% foreach my $line (@lines) {
+	<p><%= $line %></p>
+% }
+<hr>
+<h2>Operacionalització en forma d'objectius:</h2>
+
+% while (my $set = $obj_rs->next) {
+	% my $objectiu  = $set->objectiu;
+	% my $numero		= $set->num;
+	% my $num				= print_num($numero);
+	% my $llei			= substr $numero, 0, 3;
+	<b>Objectiu
+	%= link_to $num => "/obj/2/$llei";
+	</b>
+	% my @lines		= split(/\n/, $objectiu);
+	% foreach my $line (@lines) {
+		<%= $line %><br>
+	% }
+	<br>
+% }
+
+<hr>
+
+%# vim: tabstop=2 

@@ -1,0 +1,28 @@
+% layout 'default';
+% title 'Objectius de la llei';
+
+%# Variables {{{
+% my $objectius_rs	= $self->m_llei->objectius;
+% my $objectius_n1	= $self->m_llei->nivell_obj('1');
+%# }}}
+
+<h1><%= link_to "Objectius Generals Llei 11/2014"  => "/obj/1/0" %></h1>
+<hr>
+<div id="generals">
+% while (my $set = $objectius_n1->next) {
+	% my $num_obj = $set->num;
+	% my $set_obj = $set->objectiu;
+	% my $num			= $num_obj - 100;
+	% my $puntuacio = $self->m_llei->punts($num_obj);
+	% my $color = print_color($puntuacio);
+	<p>
+	<b><span style="color:<%= $color %>">◼
+	%= link_to "$num" =>  "/obj/2/$num_obj";
+	</span></b>:
+	%= $set_obj;
+	</p>
+% }
+<hr><br>
+</div>
+
+%# vim: tabstop=2 

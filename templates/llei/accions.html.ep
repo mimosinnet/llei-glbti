@@ -1,0 +1,55 @@
+% layout 'default';
+% title 'Accions derivades dels Objetius';
+
+%# Variables {{{
+% my $objectius_rs	= $self->m_llei->objectius;
+% my $objectius_n1	= $self->m_llei->nivell_obj('1');
+%# }}}
+
+<h1><%= link_to "Accions en el marc de la Llei 11/2014"  => "/obj/1/0" %></h1>
+%# Capçalera amb els objectius {{{
+<hr>
+Objectiu:
+% while (my $set = $objectius_n1->next) {
+	% my $num_obj = $set->num;
+	% next if $num_obj eq '100';
+	% my $num			= $num_obj - 100;
+	% my $puntuacio = $self->m_llei->punts($num_obj);
+	% my $color = print_color($puntuacio);
+	<b>[<span style="color:<%= $color %>">◼
+	%= link_to "$num" =>  "/accions/$num_obj";
+	</span>]</b>
+% }
+<hr><br>
+%# }}}
+
+% my $objectiu_obj = $self->m_llei->objectiu($objectiu);
+% my $objectiu_itm  = print_num($objectiu);
+% my $objectiu_txt  = $objectiu_obj->objectiu;
+<p><b>
+%= "Objectiu $objectiu_itm";
+</b>:
+%= $objectiu_txt;
+</p>
+<p><b>Exemple d'accions:</b></p>
+<ul>
+% my $accions = $self->m_llei->accions($objectiu_itm);
+% while (my $set = $accions->next) {
+	% my $accio_codi  = $set->codi->codi;
+	% my $codi				= print_num($accio_codi);
+	% my $accio_agent_codi = $set->agent;
+	% my $agent				= $self->m_llei->agent($accio_agent_codi);
+	% my $accio_accio = $set->accio;
+	<li class="accions">
+					<b><%= $codi %></b>:
+					<span class="mostra">
+					%= $accio_agent_codi;
+					</span><span class="amaga">
+					%= $agent;
+					</span>-
+					%= $accio_accio;
+	</li>
+% }
+<hr>
+
+%# vim: tabstop=2 

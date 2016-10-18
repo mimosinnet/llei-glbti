@@ -1,0 +1,150 @@
+body {
+  background-color: white;
+	font-family: Century Gothic, sans-serif;
+	margin: 5em 4em 0px 5em;
+}
+
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 0 0 1em -1em;
+}
+
+h2 {
+	margin: 1em 0 1em 0;
+}
+
+a {
+  transition: color .6s;
+  color: #33ffff;
+	font-family: ‘Arial Narrow’, sans-serif;
+}
+
+li {
+	font-family: Verdana, Geneva, sans-serif;
+	margin: 0 0 1em 5em;
+}
+
+a:link,
+a:visited { color: #6a0080; }
+a:hover   { 
+	color: #ff66ff; 
+}
+a:active  {
+  transition: color .6s;
+  color: #007BE6;
+}
+
+li.accions span.amaga {
+	display: none;
+	color: #007BE6;
+}
+
+li.accions span.mostra {
+	color: #007BE6;
+}
+
+li.accions:hover span.mostra {
+	display: none;
+}
+
+li.accions:hover span.amaga {
+	display:inline;
+}
+
+/* Taula pàgina inici {{{ */
+table.inici {
+	margin: 0 0 1em 5em;
+	font-size: 140%;
+	font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+}
+
+.inici td {
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+/* }}} */
+
+/* Images pàgina inici {{{ */
+.imatge-inici {
+	width: 30px; height: 30px; overflow: hidden;
+	float: left;
+	border: 1px solid #333;
+	margin: 1px;
+	}
+
+.imatge-inici a img {
+	height: 100%; 
+	}
+
+/* }}} */
+
+/* Objectius generals {{{ */
+div#generals {
+	font-size: 120%;
+}
+
+/* }}} */
+
+/* layout default {{{ */
+
+/* div columna {{{ */
+div#columna {
+  position: absolute;
+	left: 0;
+	top: 0;
+  width: 0.5em;
+	height: 100%;
+	background-image: url("Gay_flag_8.svg");
+}
+/* }}} */
+
+/* div barra {{{ */
+div#barra {
+	padding: 0.2em 0 0 0;
+  position: absolute;
+	left: 0.5em;
+	top: 0em;
+  width: 100%;
+	height: 2.2em;
+}
+
+table#barra {
+}
+
+table#barra td {
+	padding: 0.1em 1em 0.1em 1em;
+	width: 3em;
+	text-align: center;
+	border: 1px solid black;
+}
+
+/* }}} */
+
+/* }}} */
+
+/* Recursos {{{
+	background-image: url("Gay_flag_8.svg");
+
+Fonts
+font-family: Impact, Charcoal, sans-serif;
+font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+font-family: Tahoma, Geneva, sans-serif;
+font-family: Century Gothic, sans-serif;
+font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+font-family: ‘Arial Black’, Gadget, sans-serif;
+font-family: ‘Times New Roman’, Times, serif;
+font-family: ‘Arial Narrow’, sans-serif;
+font-family: Verdana, Geneva, sans-serif;
+font-family: Copperplate / Copperplate Gothic Light, sans-serif;
+font-family: ‘Lucida Console’, Monaco, monospace;
+font-family: Gill Sans / Gill Sans MT, sans-serif;
+font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+font-family: ‘Courier New’, Courier, monospace;
+font-family: Arial, Helvetica, sans-serif;
+font-family: Georgia, Serif;
+
+}}} */
+
+/* vim: tabstop=2
+*/

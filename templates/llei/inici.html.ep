@@ -1,0 +1,51 @@
+% layout 'default';
+% title 'Implantació de la Llei';
+<h1>Avaluació del Procés d'Implementació</h1>
+<h2>Llei 11/2014, del 10 d'octubre, per a garantir els drets de lesbianes, gais, bisexuals, transgèneres i
+		intersexuals i per a eradicar l'homofòbia, la bifòbia i la transfòbia.</h2>
+<hr>
+
+<table class="inici">
+	<tr>
+		<td>· <%= link_to 'Text de la Llei' => '/llei_11_2014_LGTBI.pdf' %></td>
+	</tr><tr>
+		<td>· <%= link_to 'Operacionalització de la Llei' => '/llei/A00' %></td>
+	</tr><tr>
+		<td>· <%= link_to 'Objectius Generals de la Llei' => '/objectius' %></td>
+	</tr><tr>
+			<td style="padding: 0 0 0 15% ">
+   	 	<div class="imatge-inici">
+        <a href="/img/Objectius.jpg">
+          <img src="/img/Objectius.jpg">
+        </a>
+			</div>
+		</td>
+	</tr><tr>
+		<td>· <%= link_to 'Sectors d\'Implementació' => '/pdf/Sectors.pdf' %></td>
+	</tr><tr>
+		<td>
+			· <%= link_to 'Agents Implementadors' => '/agents' %> 
+		</td>
+	</tr><tr>
+		<td style="padding: 0 0 0 15% ">
+   	 		<div class="imatge-inici">
+        <a href="/img/Agents.jpg">
+          <img src="/img/Agents.jpg">
+        </a>
+   	 		</div>
+   	 		<div class="imatge-inici">
+        <a href="/img/Departaments.jpg">
+            <img src="/img/Departaments.jpg">
+        </a>
+    		</div>
+		</td>
+	</tr><tr>
+		<td>· <%= link_to 'El mandat de la llei'  => '/obj/1/0' %></td>
+	</tr><tr>
+		<td>· <%= link_to 'Les accions en el marc de la llei'  => '/accions/101' %></td>
+	</tr>
+</table>
+<hr>
+
+<%# vim: tabstop=2
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title><%= title %></title>
+		<link href="/default.css" rel="stylesheet" type="text/css" />
+	</head>
+	<div id="columna"></div>
+	<div id="barra">
+		<table id="barra">
+			<td><%= link_to 'Inici' => '/' %></td>
+			<td><%= link_to 'Llei' => '/llei_11_2014_LGTBI.pdf' %></td>
+			<td><%= link_to 'Objectius' => '/objectius' %></td>
+			<td><%= link_to 'Sectors' => '/pdf/Sectors.pdf' %></td>
+			<td><%= link_to 'Agents' => '/agents' %></td>
+			<td><%= link_to 'Departaments' => '/pdf/Departaments.pdf' %></td>
+			<td><%= link_to 'Mandat'  => '/obj/1/0' %></td>
+			<td><%= link_to 'Accions'  => '/accions/101' %></td>
+		</table>
+	</div>
+  <body><%= content %></body>
+</html>
+
+<!-- vim: tabstop=2
+-->

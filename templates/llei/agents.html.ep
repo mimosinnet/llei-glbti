@@ -1,0 +1,23 @@
+% layout 'default';
+% title 'Agents implicats en el procés d\'implementació de la llei';
+
+%# Variables {{{
+% my $agents_rs	= $self->m_llei->agents;
+%# }}}
+
+<h1>Agents que s'han tingut en compte alhora d'avaluar el procés d'implementació</h1>
+<hr>
+<p><big>La revisió del procés d'implementació de la Llei 11/2014 ha tingut en compte els seguents actors implementadors:</big></p>
+<hr>
+<ul>
+% while (my $set = $agents_rs->next) {
+	% my $agent_codi_o = $set->codi_o;
+	% my $agent_organisme = $set->organisme;
+	<li>
+		<%= "$agent_organisme ($agent_codi_o)" %>
+	</li>
+% }
+</ul>
+<hr><br>
+
+%# vim: tabstop=2 
